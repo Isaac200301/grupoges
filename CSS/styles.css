@@ -50,6 +50,8 @@ header .imagen-logo {
     mix-blend-mode: multiply;
     width: 100px;
     height: auto;
+    padding-bottom: 5px;
+    padding-top: 15px;
 }
 
 header .container {
@@ -75,4 +77,94 @@ header a {
 
 header a:hover {
     color: rgb(3, 2, 68);
+}
+
+.container2 {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    overflow: hidden;
+    background-color: white;
+}
+
+.slider input {
+    visibility: hidden;
+    display: none;
+}
+
+.botones {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: 20px;
+    gap: 10px;
+}
+
+.botones label {
+    width: 15px;
+    height: 15px;
+    background-color: #220bce;
+    border-radius: 10px;
+    opacity: 0.5;
+    cursor: pointer;
+    z-index: 1;
+    transition: 300ms ease-in-out;
+}
+
+.botones label:hover {
+    scale: 1.2;
+    opacity: 1;
+}
+
+.slider input:nth-child(1):checked ~ .botones label:nth-child(1),
+.slider input:nth-child(2):checked ~ .botones label:nth-child(2),
+.slider input:nth-child(3):checked ~ .botones label:nth-child(3) {
+    opacity: 1;
+    scale: 1.2;
+    width: 25px;
+}
+
+.contenido {
+    position: relative;
+    width: 300vw;
+    display: flex;
+    transition: 400ms ease-in-out;
+}
+
+.primerslide,
+.segundoslide,
+.tercerslide {
+    position: relative;
+    width: 100vw;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.primerslide {
+    background-image: url(/Imagenes/Imagen-Slide1.jpg);
+}
+
+.segundoslide {
+    background-image: url(/Imagenes/Imagen-Slide2.jpg);
+}
+
+.tercerslide {
+    background-image: url(/Imagenes/Imagen-Slide3.jpg);
+}
+
+.slider input:nth-child(1):checked ~ .contenido {
+    left: 0;
+}
+
+.slider input:nth-child(2):checked ~ .contenido {
+    left: -100vw;
+}
+
+.slider input:nth-child(3):checked ~ .contenido {
+    left: -200vw;
 }
