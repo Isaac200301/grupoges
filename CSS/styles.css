@@ -33,7 +33,7 @@ li {
 }
 
 header {
-    background-color: rgb(255, 255, 255);
+    background-color: #ffffff;
     text-decoration: none !important;
 }
 
@@ -42,7 +42,6 @@ header .logo {
     font-weight: bold;
     color: #1A1164;
     font-size: 1.45em;
-    
 }
 
 header .imagen-logo {
@@ -58,7 +57,6 @@ header .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
 
 header nav {
@@ -73,12 +71,14 @@ header a {
     text-decoration: none !important;
     font-weight: bold;
     color: #1A1164;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 header a:hover {
     color: rgb(3, 2, 68);
+    background-color: #ffffff;
+    transform: translateY(-2px);
 }
-
 .container2 {
     position: relative;
     width: 100%;
@@ -104,7 +104,7 @@ header a:hover {
 .botones label {
     width: 15px;
     height: 15px;
-    background-color: #220bce;
+    background-color: #1e00ff;
     border-radius: 10px;
     opacity: 0.5;
     cursor: pointer;
@@ -113,7 +113,7 @@ header a:hover {
 }
 
 .botones label:hover {
-    scale: 1.2;
+    transform: scale(1.2);
     opacity: 1;
 }
 
@@ -121,7 +121,7 @@ header a:hover {
 .slider input:nth-child(2):checked ~ .botones label:nth-child(2),
 .slider input:nth-child(3):checked ~ .botones label:nth-child(3) {
     opacity: 1;
-    scale: 1.2;
+    transform: scale(1.2);
     width: 25px;
 }
 
@@ -168,3 +168,105 @@ header a:hover {
 .slider input:nth-child(3):checked ~ .contenido {
     left: -200vw;
 }
+
+#nosotros {
+    padding: 100px 0;
+    text-align: center;
+}
+
+#nosotros .contenido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#nosotros .texto {
+    max-width: 400px;
+    margin: 0 auto 20px;
+    color: #333;
+}
+
+#nosotros .cartas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+#nosotros .carta {
+    flex: 1 1 300px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+#nosotros .carta:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.carta:nth-child(1) h3 {
+    color: #1915ee; 
+}
+
+.carta:nth-child(2) h3 {
+    color: #e0ca05; 
+}
+
+#nosotros .carta p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555; 
+}
+
+.carta:nth-child(1) {
+    background-color: #fff;
+    color: #1915ee; 
+}
+
+.carta:nth-child(2) {
+    background-color: #fff;
+    color: #e0ca05;
+}
+
+.carta:nth-child(1) p,
+.carta:nth-child(2) p {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#clientes {
+    padding: 100px 0;
+    text-align: center;
+}
+
+#clientes .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#clientes h2 {
+    margin-bottom: 30px;
+    color: #1A1164;
+    font-size: 2em;
+}
+
+#clientes .logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#clientes .logos img {
+    width: 180px;
+    margin: 20px; 
+    transition: transform 0.3s ease; 
+}
+
+#clientes .logos img:hover {
+    transform: scale(1.4);
+}
+
+
