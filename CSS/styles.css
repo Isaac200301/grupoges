@@ -82,91 +82,48 @@ header a:hover {
 .container2 {
     position: relative;
     width: 100%;
-    height: 75vh;
+    height: auto;
     overflow: hidden;
     background-color: white;
 }
 
-.slider input {
-    visibility: hidden;
-    display: none;
-}
-
-.botones {
-    position: absolute;
+.slider {
+    position: relative;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    bottom: 20px;
-    gap: 10px;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.botones label {
-    width: 15px;
-    height: 15px;
-    background-color: #1e00ff;
-    border-radius: 10px;
-    opacity: 0.5;
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slides img {
+    width: 100%;
+    height: auto; 
+    object-fit: cover; 
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
     cursor: pointer;
-    z-index: 1;
-    transition: 300ms ease-in-out;
+    padding: 10px;
+    font-size: 18px;
 }
 
-.botones label:hover {
-    transform: scale(1.2);
-    opacity: 1;
-}
-
-.slider input:nth-child(1):checked ~ .botones label:nth-child(1),
-.slider input:nth-child(2):checked ~ .botones label:nth-child(2),
-.slider input:nth-child(3):checked ~ .botones label:nth-child(3) {
-    opacity: 1;
-    transform: scale(1.2);
-    width: 25px;
-}
-
-.contenido {
-    position: relative;
-    width: 300vw;
-    display: flex;
-    transition: 400ms ease-in-out;
-}
-
-.primerslide,
-.segundoslide,
-.tercerslide {
-    position: relative;
-    width: 100vw;
-    height: 75vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-}
-
-.primerslide {
-    background-image: url(/Imagenes/Imagen-Slide1.jpg);
-}
-
-.segundoslide {
-    background-image: url(/Imagenes/Imagen-Slide2.jpg);
-}
-
-.tercerslide {
-    background-image: url(/Imagenes/Imagen-Slide3.jpg);
-}
-
-.slider input:nth-child(1):checked ~ .contenido {
+.prev {
     left: 0;
 }
 
-.slider input:nth-child(2):checked ~ .contenido {
-    left: -100vw;
-}
-
-.slider input:nth-child(3):checked ~ .contenido {
-    left: -200vw;
+.next {
+    right: 0;
 }
 
 #nosotros {
@@ -269,4 +226,152 @@ header a:hover {
     transform: scale(1.4);
 }
 
+@media (min-width: 720px) {
+    header {
+        width: 100%;
+    }
+
+    header .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header nav {
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 15px;
+    }
+
+
+    @media only screen and (max-width: 600px) {
+        body {
+            font-size: 14px; 
+        }
+    
+        h1 {
+            font-size: 2em;
+        }
+    
+        h2, h3 {
+            font-size: 1.25em;
+        }
+    
+        header .logo {
+            font-size: 1.2em;
+            padding: 15px 20px;
+        }
+    
+        header .imagen-logo {
+            width: 80px;
+            padding-top: 10px;
+        }
+    
+        header nav a {
+            padding: 5px 8px;
+            font-size: 0.9em;
+        }
+    
+        #nosotros {
+            padding: 50px 0; 
+        }
+    
+        #nosotros .contenido .texto {
+            max-width: 300px;
+        }
+    
+        #nosotros .carta {
+            flex-basis: calc(50% - 20px);
+        }
+    
+        #clientes .logos img {
+            width: 120px;
+            margin: 10px;
+        }
+    }
+    
+    @media only screen and (min-width: 601px) and (max-width: 1024px) {
+        body {
+            font-size: 16px;
+        }
+    
+        h1 {
+            font-size: 2.5em; 
+        }
+    
+        header .logo {
+            font-size: 1.3em; 
+            padding: 20px 25px; 
+        }
+    
+        header .imagen-logo {
+            width: 90px;
+            padding-top: 12px; 
+        }
+    
+        header nav a {
+            padding: 8px 15px; 
+            font-size: 1em; 
+        }
+    
+        #nosotros {
+            padding: 80px 0; 
+        }
+    
+        #nosotros .contenido .texto {
+            max-width: 350px; 
+        }
+    
+        #nosotros .carta {
+            flex-basis: calc(50% - 20px); 
+        }
+    
+        #clientes .logos img {
+            width: 140px;
+            margin: 15px; 
+        }
+    }
+    
+@media only screen and (min-width: 1025px) {
+    body {
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    header .logo {
+        font-size: 1.2em; 
+        padding: 15px 30px; 
+    }
+
+    header .imagen-logo {
+        width: 80px;
+        padding-top: 10px; 
+    }
+
+    header nav a {
+        padding: 8px 15px;
+        font-size: 1em; 
+    }
+
+    #nosotros {
+        padding: 80px 0; 
+    }
+
+    #nosotros .contenido .texto {
+        max-width: 350px; 
+    }
+
+    #nosotros .carta {
+        flex-basis: calc(33.333% - 20px); 
+    }
+
+    #clientes .logos img {
+        width: 140px; 
+        margin: 15px; 
+    }
+}
+
+}
 
